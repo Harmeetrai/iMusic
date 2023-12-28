@@ -26,9 +26,11 @@ struct ContentView: View {
                     Text("Search")
                 }
         }
+        .accentColor(.red)
     }
 }
 
 #Preview {
     ContentView()
+        .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
 }

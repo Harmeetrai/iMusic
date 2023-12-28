@@ -9,7 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Home")
+        NavigationStack{
+            Text("On Rotation")
+            Text("Loved Playlists")
+            Text("Favourite Albums")
+            Text("Recently Played")
+            Text("Recently Added")
+            .navigationTitle("Home")
+        }
     }
 }
 
