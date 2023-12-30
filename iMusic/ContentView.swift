@@ -31,19 +31,6 @@ struct ContentView: View {
             CustomBottomSheet()
         }
     }
-    
-//    custom bottom sheet
-    @ViewBuilder
-    func CustomBottomSheet() -> some View {
-        ZStack {
-            Rectangle()
-                .fill(.ultraThickMaterial)
-                .cornerRadius(20)
-        }
-        .frame(height: 70)
-        .offset(y: -55)
-
-    }
 }
 
 #Preview {
