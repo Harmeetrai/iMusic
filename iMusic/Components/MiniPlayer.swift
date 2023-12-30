@@ -12,7 +12,7 @@ func CustomBottomSheet() -> some View {
     ZStack {
         Rectangle()
             .fill(.ultraThickMaterial)
-            .cornerRadius(20)
+            .cornerRadius(15)
             .overlay(MiniPlayer())
             .padding(.horizontal, 5)
     }
@@ -23,6 +23,18 @@ func CustomBottomSheet() -> some View {
 struct MiniPlayer: View {
     var body: some View {
         HStack(spacing: 0) {
+            GeometryReader {
+                let size = $0.size
+                
+                Image("AlbumCover")
+                    .resizable()
+                    .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                    .frame(width: size.width, height: size.height)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                
+            }
+            .frame(width: 50, height: 50)
+            .padding(.leading, 10)
             Text("Test")
                 .fontWeight(.semibold)
                 .lineLimit(1)
