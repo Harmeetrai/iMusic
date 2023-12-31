@@ -18,6 +18,7 @@
 		40F77A652B3DF5EB00B027EB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F77A642B3DF5EB00B027EB /* LibraryView.swift */; };
 		40F77A672B3DF5F800B027EB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F77A662B3DF5F800B027EB /* SearchView.swift */; };
 		40F77A6A2B3FEB1700B027EB /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F77A692B3FEB1700B027EB /* MiniPlayer.swift */; };
+		40F77A6C2B40FBEC00B027EB /* FullPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F77A6B2B40FBEC00B027EB /* FullPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		40F77A642B3DF5EB00B027EB /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		40F77A662B3DF5F800B027EB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		40F77A692B3FEB1700B027EB /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
+		40F77A6B2B40FBEC00B027EB /* FullPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				40F77A622B3DF5CC00B027EB /* HomeView.swift */,
 				40F77A642B3DF5EB00B027EB /* LibraryView.swift */,
 				40F77A662B3DF5F800B027EB /* SearchView.swift */,
+				40F77A6B2B40FBEC00B027EB /* FullPlayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				40F77A672B3DF5F800B027EB /* SearchView.swift in Sources */,
 				40F77A6A2B3FEB1700B027EB /* MiniPlayer.swift in Sources */,
+				40F77A6C2B40FBEC00B027EB /* FullPlayer.swift in Sources */,
 				40F77A652B3DF5EB00B027EB /* LibraryView.swift in Sources */,
 				40F77A632B3DF5CC00B027EB /* HomeView.swift in Sources */,
 				40F77A392B3DF49D00B027EB /* ContentView.swift in Sources */,

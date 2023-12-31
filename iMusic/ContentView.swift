@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var expandedPlayer: Bool = true
+    @Namespace private var animation
     var body: some View {
         TabView{
             HomeView()
@@ -29,6 +31,12 @@ struct ContentView: View {
         .accentColor(.red)
         .safeAreaInset(edge:.bottom) {
             CustomBottomSheet()
+        }
+        .overlay {
+            if expandedPlayer {
+                FullPlayer(expandedPlayer: $expandedPlayer, animation: animation)
+                    .transition(.asymmetric(insertion: .identity, removal: .offset(y: -5)))
+            }
         }
     }
 }
