@@ -7,34 +7,29 @@
 
 import SwiftUI
 
-@ViewBuilder
-func CustomBottomSheet() -> some View {
-    ZStack {
-        Rectangle()
-            .fill(.ultraThickMaterial)
-            .cornerRadius(15)
-            .overlay(MiniPlayer())
-            .padding(.horizontal, 5)
-    }
-    .frame(height: 70)
-    .offset(y: -55)
-}
-
 struct MiniPlayer: View {
+    @Binding var expandedPlayer: Bool
+    var animation: Namespace.ID
     var body: some View {
-        HStack(spacing: 0) {
-            GeometryReader {
-                let size = $0.size
-                
-                Image("AlbumCover")
-                    .resizable()
-                    .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                    .frame(width: size.width, height: size.height)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        if !expandedPlayer {
+            HStack(spacing: 0) {
+            ZStack {
+                    GeometryReader {
+                        let size = $0.size
+                        
+                        Image("AlbumCover")
+                            .resizable()
+                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                            .frame(width: size.width, height: size.height)
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        
+                    }
+                    .matchedGeometryEffect(id: "ARTWORK", in: animation)
                 
             }
-            .frame(width: 50, height: 50)
+            .frame(width: 50,height: 50)
             .padding(.leading, 10)
+            
             Text("Test")
                 .fontWeight(.semibold)
                 .lineLimit(1)
@@ -47,7 +42,7 @@ struct MiniPlayer: View {
                     .frame(width: 20, height: 20)
             }
             .padding(.trailing, 20)
-
+            
             Button{
             } label: {
                 Image(systemName: "forward.fill")
@@ -56,6 +51,14 @@ struct MiniPlayer: View {
             }
             .padding(.trailing, 20)
         }
-        .foregroundColor(.primary)
+            .foregroundColor(.primary)
+            .frame(height: 70)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                withAnimation(.easeInOut(duration: 0.3)){
+                    expandedPlayer = true
+                }
+            }
+    }
     }
 }

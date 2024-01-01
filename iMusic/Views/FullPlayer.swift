@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct FullPlayer: View {
-    @Binding var expandedPlayer: Bool
+    @Binding var expandPlayer: Bool
     var animation: Namespace.ID
+    @State private var animateContent: Bool = false
     var body: some View {
         GeometryReader {
             let size = $0.size
@@ -19,12 +20,30 @@ struct FullPlayer: View {
                 Capsule()
                     .fill(.gray)
                     .frame(width: 40,height: 5)
+                
+//                Artwork
+                GeometryReader {
+                    let size = $0.size
+                    
+                    Image("AlbumCover")
+                        .resizable()
+                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                        .frame(width: size.width, height: size.height)
+                        .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                }
+                .frame(height: size.width-50)
+                .matchedGeometryEffect(id: "ARTWORK", in: animation)
             }
             .padding(.top, safeArea.top + (safeArea.bottom == 0 ? 10 : 0))
             .padding(.bottom,safeArea.bottom == 0 ? 10 : safeArea.bottom)
             .padding(.horizontal, 25)
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment: .top)
             .ignoresSafeArea(.container,edges: .all)
+        }
+        .onAppear{
+            withAnimation(.easeInOut(duration: 0.5)){
+                animateContent = true
+            }
         }
     }
 }

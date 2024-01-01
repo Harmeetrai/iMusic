@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var expandedPlayer: Bool = true
-    @Namespace private var animation
+    @State var expandedPlayer: Bool = false
+    @Namespace var animation: Namespace.ID
+
     var body: some View {
         TabView{
             HomeView()
@@ -33,10 +34,25 @@ struct ContentView: View {
             CustomBottomSheet()
         }
         .overlay {
-            if expandedPlayer {
-                FullPlayer(expandedPlayer: $expandedPlayer, animation: animation)
+            if (expandedPlayer) {
+                FullPlayer(expandPlayer: $expandedPlayer, animation: animation)
                     .transition(.asymmetric(insertion: .identity, removal: .offset(y: -5)))
             }
+        }
+    }
+    
+    @ViewBuilder
+    func CustomBottomSheet() -> some View {
+        if !expandedPlayer {
+            ZStack {
+                Rectangle()
+                    .fill(.ultraThickMaterial)
+                    .cornerRadius(15)
+                    .overlay(MiniPlayer(expandedPlayer: $expandedPlayer, animation: animation))
+                    .padding(.horizontal, 5)
+            }
+            .frame(height: 70)
+            .offset(y: -55)
         }
     }
 }

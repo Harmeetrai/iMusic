@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AB36AB0D-5C58-4A53-8670-33AF70DA7719"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA049D21-322B-4727-8F86-47D66F0E16E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iMusic/Views/FullPlayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AA049D21-322B-4727-8F86-47D66F0E16E8 - 23fe3ce2bcd192bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iMusic.FullPlayer.body.getter : some"
+                  moduleName = "iMusic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harmeetrai/Documents/github/iMusic/iMusic/Views/FullPlayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "AA049D21-322B-4727-8F86-47D66F0E16E8 - a54644c279a0cc5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in iMusic.FullPlayer.body.getter : some"
+                  moduleName = "iMusic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harmeetrai/Documents/github/iMusic/iMusic/Views/FullPlayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC43BC5C-50DE-480F-881F-6FC4E8644F09"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iMusic/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "FC43BC5C-50DE-480F-881F-6FC4E8644F09 - 71b19170a45c69ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iMusic.ContentView.body.getter : some"
+                  moduleName = "iMusic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harmeetrai/Documents/github/iMusic/iMusic/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "996">
+               </Location>
+               <Location
+                  uuid = "FC43BC5C-50DE-480F-881F-6FC4E8644F09 - ae25638aa06bd681"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.transition(SwiftUI.AnyTransition) -&gt; some&gt;&gt;.0&gt; in iMusic.ContentView.body.getter : some"
+                  moduleName = "iMusic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harmeetrai/Documents/github/iMusic/iMusic/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
