@@ -43,17 +43,24 @@ struct ContentView: View {
     
     @ViewBuilder
     func CustomBottomSheet() -> some View {
-        if !expandedPlayer {
-            ZStack {
+        ZStack {
+            if expandedPlayer {
+                Rectangle()
+                    .fill(.clear)
+            } else {
                 Rectangle()
                     .fill(.ultraThickMaterial)
                     .cornerRadius(15)
-                    .overlay(MiniPlayer(expandedPlayer: $expandedPlayer, animation: animation))
+                    .overlay{
+                        MiniPlayer(expandedPlayer: $expandedPlayer, animation: animation)
+                    }.matchedGeometryEffect(id: "BGVIEW", in: animation)
                     .padding(.horizontal, 5)
             }
-            .frame(height: 70)
-            .offset(y: -55)
+
         }
+        .frame(height: 70)
+        .offset(y: -55)
+    
     }
 }
 

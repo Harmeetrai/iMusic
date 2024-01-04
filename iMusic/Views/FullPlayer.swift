@@ -17,22 +17,24 @@ struct FullPlayer: View {
             let safeArea = $0.safeAreaInsets
             
             ZStack {
-                Capsule()
-                    .fill(.gray)
-                    .frame(width: 40,height: 5)
-                
-//                Artwork
-                GeometryReader {
-                    let size = $0.size
+                VStack(spacing: 15) {
+                    Capsule()
+                        .fill(.gray)
+                        .frame(width: 40,height: 5)
                     
-                    Image("AlbumCover")
-                        .resizable()
-                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                        .frame(width: size.width, height: size.height)
-                        .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+    //                Artwork
+                    GeometryReader {
+                        let size = $0.size
+                        
+                        Image("AlbumCover")
+                            .resizable()
+                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                            .frame(width: size.width, height: size.height)
+                            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                    }
+                    .frame(height: size.width-50)
+                    .matchedGeometryEffect(id: "ARTWORK", in: animation)
                 }
-                .frame(height: size.width-50)
-                .matchedGeometryEffect(id: "ARTWORK", in: animation)
             }
             .padding(.top, safeArea.top + (safeArea.bottom == 0 ? 10 : 0))
             .padding(.bottom,safeArea.bottom == 0 ? 10 : safeArea.bottom)
