@@ -10,6 +10,8 @@ import SwiftUI
 struct MiniPlayer: View {
     @Binding var expandedPlayer: Bool
     var animation: Namespace.ID
+    @Binding var musicInfo: MusicInfo
+
     var body: some View {
         if !expandedPlayer {
             HStack(spacing: 0) {
@@ -17,7 +19,7 @@ struct MiniPlayer: View {
                     GeometryReader {
                         let size = $0.size
                         
-                        Image("AlbumCover")
+                        musicInfo.albumCover
                             .resizable()
                             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                             .frame(width: size.width, height: size.height)
@@ -30,7 +32,7 @@ struct MiniPlayer: View {
             .frame(width: 50,height: 50)
             .padding(.leading, 10)
             
-            Text("Test")
+            musicInfo.title
                 .fontWeight(.semibold)
                 .lineLimit(1)
                 .padding(.horizontal,15)

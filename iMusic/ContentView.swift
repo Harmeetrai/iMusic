@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var expandedPlayer: Bool = false
     @Namespace var animation: Namespace.ID
-
+    @State var musicInfo: MusicInfo = MusicInfo(title: Text("test"), albumCover: Image("AlbumCover"))
     var body: some View {
         TabView{
             HomeView()
@@ -35,7 +35,7 @@ struct ContentView: View {
         }
         .overlay {
             if (expandedPlayer) {
-                FullPlayer(expandPlayer: $expandedPlayer, animation: animation)
+                FullPlayer(expandPlayer: $expandedPlayer, animation: animation, musicInfo: $musicInfo)
                     .transition(.asymmetric(insertion: .identity, removal: .offset(y: -5)))
             }
         }
@@ -52,7 +52,7 @@ struct ContentView: View {
                     .fill(.ultraThickMaterial)
                     .cornerRadius(15)
                     .overlay{
-                        MiniPlayer(expandedPlayer: $expandedPlayer, animation: animation)
+                        MiniPlayer(expandedPlayer: $expandedPlayer, animation: animation, musicInfo: $musicInfo)
                     }.matchedGeometryEffect(id: "BGVIEW", in: animation)
                     .padding(.horizontal, 5)
             }

@@ -10,6 +10,7 @@ import SwiftUI
 struct FullPlayer: View {
     @Binding var expandPlayer: Bool
     var animation: Namespace.ID
+    @Binding var musicInfo: MusicInfo
     @State private var animateContent: Bool = false
     var body: some View {
         GeometryReader {
@@ -17,6 +18,9 @@ struct FullPlayer: View {
             let safeArea = $0.safeAreaInsets
             
             ZStack {
+                Rectangle()
+                    .fill(.ultraThickMaterial)
+                    .matchedGeometryEffect(id: "BGVIEW", in: animation)
                 VStack(spacing: 15) {
                     Capsule()
                         .fill(.gray)
@@ -25,8 +29,7 @@ struct FullPlayer: View {
     //                Artwork
                     GeometryReader {
                         let size = $0.size
-                        
-                        Image("AlbumCover")
+                        musicInfo.albumCover
                             .resizable()
                             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                             .frame(width: size.width, height: size.height)
@@ -35,11 +38,11 @@ struct FullPlayer: View {
                     .frame(height: size.width-50)
                     .matchedGeometryEffect(id: "ARTWORK", in: animation)
                 }
+                .padding(.top, safeArea.top + (safeArea.bottom == 0 ? 10 : 0))
+                .padding(.bottom,safeArea.bottom == 0 ? 10 : safeArea.bottom)
+                .padding(.horizontal, 25)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment: .top)
             }
-            .padding(.top, safeArea.top + (safeArea.bottom == 0 ? 10 : 0))
-            .padding(.bottom,safeArea.bottom == 0 ? 10 : safeArea.bottom)
-            .padding(.horizontal, 25)
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment: .top)
             .ignoresSafeArea(.container,edges: .all)
         }
         .onAppear{
